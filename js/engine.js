@@ -9,7 +9,7 @@
  * drawn but that is not the case. What's really happening is the entire "scene"
  * is being drawn over and over, presenting the illusion of animation.
  *
- * This engine makes the canvas' context (ctx) object globally available to make 
+ * This engine makes the canvas' context (ctx) object globally available to make
  * writing app.js a little simpler to work with.
  */
 
@@ -79,7 +79,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -89,7 +89,20 @@ var Engine = (function(global) {
      * the data/properties related to the object. Do your drawing in your
      * render methods.
      */
+
+    function checkCollisions() {
+        allEnemies.forEach(function(enemy) {
+            if(enemy.collision(enemy, player)){
+                initGame();
+                changeLives(-1);
+            };
+        });
+    }
+
     function updateEntities(dt) {
+
+        manageEnemies();
+
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
@@ -117,7 +130,7 @@ var Engine = (function(global) {
             numRows = 6,
             numCols = 5,
             row, col;
-        
+
         // Before drawing, clear existing canvas
         ctx.clearRect(0,0,canvas.width,canvas.height)
 
@@ -135,8 +148,10 @@ var Engine = (function(global) {
                  * we're using them over and over.
                  */
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
+
             }
         }
+
 
         renderEntities();
     }
@@ -173,7 +188,8 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/char-princess-girl.png'
     ]);
     Resources.onReady(init);
 

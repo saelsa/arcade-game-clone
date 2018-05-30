@@ -1,6 +1,13 @@
-frontend-nanodegree-arcade-game
-===============================
+# arcade-game-clone
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+A take on the well-beloved frogger arcade game. See if you can help a princess find her way over the busy road to go for a swim - but beware of bugs, she's super scared of them!
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## The game
+
+The goal is to reach the water as often as possible while avoiding the bugs crossing the street. You can move the player with your keyboard - up, down, right and left. Each successful crossing will earn you 100 points. Hitting a bug will cost you a life. And since you only have three of them - *that's still more than most people but yeah, less than cats* - you should be careful. The game is over when you have lost all your lives. In the meantime try to score as many points as possible.
+
+## Wanna play?
+
+There are two ways to play:
+- right now, here and then: [arcade-game-clone](https://saelsa.github.io/arcade-game-clone)
+- download or clone the repository and open the index.html in a browser of your choice
